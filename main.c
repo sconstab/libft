@@ -6,7 +6,7 @@
 /*   By: sconstab <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 09:12:52 by sconstab          #+#    #+#             */
-/*   Updated: 2019/05/20 16:11:09 by sconstab         ###   ########.fr       */
+/*   Updated: 2019/05/22 16:11:25 by sconstab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 int	main(void)
 {
-	ft_putchar(ft_strlen("hello"));
+	ft_putchar('h');
 	return (0);
 }

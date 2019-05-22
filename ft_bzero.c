@@ -6,7 +6,7 @@
 /*   By: sconstab <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 10:47:29 by sconstab          #+#    #+#             */
-/*   Updated: 2019/05/21 13:46:44 by sconstab         ###   ########.fr       */
+/*   Updated: 2019/05/22 15:39:10 by sconstab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,6 @@ void	ft_bzero(void *s, size_t n)
 	unsigned char *dst;
 
 	dst = s;
-	while (n)
-	{
-		*dst = 0;
-		dst++;
-		n--;
-	}
+	while (n--)
+		*dst++ = 0;
 }
