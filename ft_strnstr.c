@@ -1,35 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sconstab <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/22 12:56:27 by sconstab          #+#    #+#             */
-/*   Updated: 2019/05/24 07:32:18 by sconstab         ###   ########.fr       */
+/*   Created: 2019/05/27 14:12:51 by sconstab          #+#    #+#             */
+/*   Updated: 2019/05/27 14:38:34 by sconstab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+char	*ft_strnstr(const char *h, const char *n, size_t len)
 {
-	char	*csrc;
-	char	*cdst;
-	char	*lsrc;
-	char	*ldst;
+	size_t i;
 
-	csrc = (char *)src;
-	cdst = (char *)dst;
-	if (cdst < csrc)
-		while (len--)
-			*cdst++ = *csrc++;
-	else
-	{
-		lsrc = csrc + (len - 1);
-		ldst = cdst + (len - 1);
-		while (len--)
-			*ldst-- = *lsrc--;
-	}
-	return (dst);
+	i = 0;
+	while (*h && i < len)
+		if (*h == *n)
+			if (!ft_strncmp(h, n, ln))
+				return ((char *)h);
+	return (NULL);
 }

@@ -6,93 +6,112 @@
 /*   By: sconstab <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 07:47:47 by sconstab          #+#    #+#             */
-/*   Updated: 2019/05/21 17:26:46 by sconstab         ###   ########.fr       */
+/*   Updated: 2019/05/23 11:11:11 by sconstab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
+#include "libft.h"
 
-void	*ft_memset(void *b, int c, size_t len);
-void	ft_bzero(void *s, size_t n);
-void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n);
-void	*ft_memccpy(void *restrict dst, const void *restrict src, int c, size_t n);
+//void	*ft_memset(void *b, int c, size_t len);
+//void	ft_bzero(void *s, size_t n);
+//void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n);
+//void	*ft_memccpy(void *restrict dst, const void *restrict src, int c, size_t n);
+//void	*ft_memmove(void *dst, const void *src, size_t len);
 
 int main() 
 { 
-	/*
-    char str[50] = "GeeksForGeeks is for programming geeks."; 
-    printf("\nBefore memset(): %s\n", str); 
-  
-    // Fill 8 characters starting from str[13] with '.' 
-    memset(str + 13, '.', 8*sizeof(char)); 
-  
-    printf("After memset():  %s", str); 
+    char ms[50] = "GeeksForGeeks is for programming geeks."; 
+    printf("Before memset():    %s\n", ms); 
+    memset(ms + 13, '.', 8*sizeof(char)); 
+    printf("After memset():     %s\n\n", ms); 
 
-	char str2[50] = "GeeksForGeeks is for programming geeks.";
-	printf("\nBefore memset(): %s\n", str2);
-
-	ft_memset(str2 + 13, '.', 8*sizeof(char));
-
-	printf("After memset():  %s", str2);
+	char ms2[50] = "GeeksForGeeks is for programming geeks.";
+	printf("Before ft_memset(): %s\n", ms2);
+	ft_memset(ms2 + 13, '.', 8*sizeof(char));
+	printf("After ft_memset():  %s\n\n", ms2);
 	
 
-	char str3[50] = "GeeksForGeeks is for programming geeks.";
-	printf("\nBefore bzero(): %s\n", str3);
+	char bz[50] = "GeeksForGeeks is for programming geeks.";
+	printf("Before bzero():    %s\n", bz);
+	bzero(bz + 13, 8*sizeof(char));
+	printf("After bzero():     %s\n", bz);
+	printf("Size: %lu\n\n", sizeof(bz));
 
-	bzero(str3 + 13, 8*sizeof(char));
-
-	printf("After bzero():  %s\n", str3);
-	printf("Size: %lu", sizeof(str3));
-
-	char str4[50] = "GeeksForGeeks is for programming geeks.";
-	printf("\nBefore bzero(): %s\n", str4);
-
-	ft_bzero(str4 + 13, 8*sizeof(char));
-
-	printf("After bzero():  %s\n", str4);
-	printf("Size: %lu", sizeof(str4));
+	char bz2[50] = "GeeksForGeeks is for programming geeks.";
+	printf("Before ft_bzero(): %s\n", bz2);
+	ft_bzero(bz2 + 13, 8*sizeof(char));
+	printf("After ft_bzero():  %s\n", bz2);
+	printf("Size: %lu\n\n", sizeof(bz2));
 	
-	const char src[50] = "http://www.tutorialspoint.com";
-	char dest[50] = "Hellllloooooooooooooooooooooooooooooooooooo!!";
-	printf("Before memcpy dest = %s\n", dest);
-	memcpy(dest, src, strlen(src)+1);
-	printf("After memcpy dest  = %s\n", dest);
 
-	const char src2[50] = "http://www.tutorialspoint.com";
-	char dest2[50] = "Hellllloooooooooooooooooooooooooooooooooooo!!";
-	printf("Before memcpy dest = %s\n", dest2);
-	ft_memcpy(dest2, src2, strlen(src2)+1);
-	printf("After memcpy dest  = %s\n", dest);
-	*/
+	const char mcpy[50] = "http://www.tutorialspoint.com";
+	char mcpydst[50] = "Hellllloooooooooooooooooooooooooooooooooooo!!";
+	printf("Before memcpy dest    = %s\n", mcpydst);
+	memcpy(mcpydst, mcpy, strlen(mcpy)+1);
+	printf("After memcpy dest     = %s\n\n", mcpydst);
 
-	const char src[50] = "fttp://www.tutorialspoint.com";
-	char dst[50] = "Hellllloooooooooooooooooooooooooooooooooooo!!";
-	printf("Before memccpy dst: %s\n", dst);
-	memccpy(dst, src, 'f', strlen(src)+1);
-	printf("After memccpy dst:  %s\n", dst);
+	const char mcpy2[50] = "http://www.tutorialspoint.com";
+	char mcpydst2[50] = "Hellllloooooooooooooooooooooooooooooooooooo!!";
+	printf("Before ft_memcpy dest = %s\n", mcpydst2);
+	ft_memcpy(mcpydst2, mcpy2, strlen(mcpy2)+1);
+	printf("After ft_memcpy dest  = %s\n\n", mcpydst2);
 
-	const char src2[50] = "fttp://www.tutorialspoint.com";
-	char dst2[50] = "Hellllloooooooooooooooooooooooooooooooooooo!!";
-	printf("Before memccpy dst: %s\n", dst2);
-	ft_memccpy(dst2, src2, 'f', strlen(src2)+1);
-	printf("After memccpy dst:  %s\n", dst2);
 
-    return 0; 
+	const char mcc[50] = "fttp://www.tutorialspoint.com";
+	char mccdst[50] = "Hellllloooooooooooooooooooooooooooooooooooo!!";
+	printf("Before memccpy dst:    %s\n", mccdst);
+	memccpy(mccdst, mcc, 'f', strlen(mcc)+1);
+	printf("After memccpy dst:     %s\n\n", mccdst);
+
+	const char mcc2[50] = "fttp://www.tutorialspoint.com";
+	char mccdst2[50] = "Hellllloooooooooooooooooooooooooooooooooooo!!";
+	printf("Before ft_memccpy dst: %s\n", mccdst2);
+	ft_memccpy(mccdst2, mcc2, 'f', strlen(mcc2)+1);
+	printf("After ft_memccpy dst:  %s\n\n", mccdst2);
+
+
+	char mm[100] = "Geeksfor";
+	memmove(mm+5, mm, strlen(mm));
+	printf("memmove:    %s\n", mm);
+
+	char mm2[100] = "Geeksfor";
+	ft_memmove(mm2+5, mm2, strlen(mm2));
+	printf("ft_memmove: %s\n\n", mm2);
+	
+
+	char mc[100] = "Geeksfor";
+	memcpy(mc+5, mc, strlen(mc)+1);
+	printf("memcpy:    %s\n", mc);
+
+	char mc2[100] = "Geeksfor";
+	ft_memcpy(mc2+5, mc2, strlen(mc2)+1);
+	printf("ft_memcpy: %s\n\n", mc2);
+
+
+	char mchr[100] = "Geeksfor";
+	memchr(mchr, 's', strlen(mchr));
+	printf("memchr:    %s\n", mchr);
+
+	char mchr2[100] = "Geeksfor";
+	ft_memchr(mchr2, 's', strlen(mchr2));
+	printf("ft_memchr: %s\n\n", mchr2);
+
+
+
+    return (0); 
 }
 
+/*
 void	*ft_memset(void *b, int c, size_t len)
 {
 	unsigned char *dst;
 
 	dst = b;
-
-	while (len > 0)
-	{
-		*dst = (unsigned char) c;
-		dst++;
-		len--;
-	}
+	while (len--)
+		*dst++ = (unsigned char) c;
 	return (b);
 }
 
@@ -101,29 +120,19 @@ void	ft_bzero(void *s, size_t n)
 	unsigned char *dst;
 
 	dst = s;
-
-	while (n)
-	{
-		*dst = 0;
-		dst++;
-		n--;
-	}
+	while (n--)
+		*dst++ = 0;
 }
 
 void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 {
 	unsigned char *csrc;
 	unsigned char *cdst;
-	int i;
 
-	cdst = (unsigned char *)dst;
 	csrc = (unsigned char *)src;
-	i = 0;
-	while(i < n)
-	{
-		cdst[i] = csrc[i];
-		i++;
-	}
+	cdst = (unsigned char *)dst;
+	while(n--)
+		*cdst++ = *csrc++;
 	return (dst);
 }
 
@@ -131,17 +140,32 @@ void	*ft_memccpy(void *restrict dst, const void *restrict src, int c, size_t n)
 {
 	unsigned char	*csrc;
 	unsigned char	*cdst;
-	int				i;
 
 	csrc = (unsigned char *)src;
 	cdst = (unsigned char *)dst;
-	i = 0;
-	cdst[i] = csrc[i];
-	while (i < n && csrc[i] != c)
-	{
-		i++;
-		cdst[i] = csrc[i];
-	}
+	*cdst = *csrc;
+	while (n-- && *csrc != c)
+		*cdst++ = *csrc++;
 
 	return (dst);
 }
+
+void	*ft_memmove(void *dst, const void *src, size_t len)
+{
+	unsigned char 	*csrc;
+	unsigned char 	*cdst;
+	unsigned char 	temp[len];
+	int				i;
+	
+	csrc = (unsigned char *)src;
+	cdst = (unsigned char *)dst;
+	i = 0;
+	while(len--)
+		temp[i++] = *csrc++;
+	i = 0;
+	while(temp[i])
+		*cdst++ = temp[i++];
+
+	return (dst);
+}
+*/
