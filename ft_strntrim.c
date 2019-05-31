@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*   ft_strntrim.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sconstab <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/30 10:27:58 by sconstab          #+#    #+#             */
-/*   Updated: 2019/05/31 15:15:27 by sconstab         ###   ########.fr       */
+/*   Created: 2019/05/31 13:55:30 by sconstab          #+#    #+#             */
+/*   Updated: 2019/05/31 15:09:45 by sconstab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_strsplit(char const *s, char c)
+char *ft_strntrim(char const *s, char c)
 {
-	char	**sa;
+	size_t	i;
+	size_t	j;
+	size_t	it;
 	char	*ns;
-	char	*tf;
-	size_t	x;
-	size_t	y;
-	size_t	z;
 
-	x = 0;
-	y = 0;
-	z = 0;
-
+	i = 0;
+	j = 0;
+	it = ft_strlen(s) - 1;
+	ns = ft_strnew(it + 1);
+	if (s == NULL)
+		return (NULL);
+	while (s[i] == c)
+		i++;
+	while (s[it] == c)
+		it--;
+	it++;
+	while (i < it && s[i])
+		ns[j++] = s[i++];
+	return (ns);
 }

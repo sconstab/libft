@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sconstab <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/30 10:27:58 by sconstab          #+#    #+#             */
-/*   Updated: 2019/05/31 15:15:27 by sconstab         ###   ########.fr       */
+/*   Created: 2019/05/31 07:46:12 by sconstab          #+#    #+#             */
+/*   Updated: 2019/05/31 09:14:00 by sconstab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_strsplit(char const *s, char c)
+char	*ft_strrev(char *s)
 {
-	char	**sa;
 	char	*ns;
-	char	*tf;
-	size_t	x;
-	size_t	y;
-	size_t	z;
+	int		len;
+	int		i;
 
-	x = 0;
-	y = 0;
-	z = 0;
-
+	i = 0;
+	len = ft_strlen(s) - 1;
+	ns = ft_strnew(len);
+	while (len >= 0)
+		ns[i++] = s[len--];
+	ns[i] = '\0';
+	return (ns);
 }

@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*   ft_intlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sconstab <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/30 10:27:58 by sconstab          #+#    #+#             */
-/*   Updated: 2019/05/31 15:15:27 by sconstab         ###   ########.fr       */
+/*   Created: 2019/05/31 06:41:27 by sconstab          #+#    #+#             */
+/*   Updated: 2019/05/31 13:14:26 by sconstab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_strsplit(char const *s, char c)
+int	ft_intlen(long n)
 {
-	char	**sa;
-	char	*ns;
-	char	*tf;
-	size_t	x;
-	size_t	y;
-	size_t	z;
+	int c;
 
-	x = 0;
-	y = 0;
-	z = 0;
-
+	c = 0;
+	if (n < 0)
+	{
+		n = n * -1;
+		c++;
+	}
+	while (n >= 1)
+	{
+		n = n / 10;
+		c++;
+	}
+	return (c);
 }
