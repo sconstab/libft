@@ -6,7 +6,7 @@
 /*   By: sconstab <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 14:13:39 by sconstab          #+#    #+#             */
-/*   Updated: 2019/05/31 08:49:02 by sconstab         ###   ########.fr       */
+/*   Updated: 2019/06/01 09:47:51 by sconstab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,12 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s);
 char	**ft_strsplit(char const *s, char c);
 char	*ft_itoa(int n);
+char	**ft_strsplit(char const *s, char c);
 int		ft_putchar(char c);
 
 int		ft_intlen(long n);
 char	*ft_strrev(char *s);
+char	*ft_strctrim(char const *s, char c);
+size_t	ft_strclen(char *s, char c);
 
 #endif
