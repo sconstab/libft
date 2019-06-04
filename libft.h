@@ -6,7 +6,7 @@
 /*   By: sconstab <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 14:13:39 by sconstab          #+#    #+#             */
-/*   Updated: 2019/06/01 09:47:51 by sconstab         ###   ########.fr       */
+/*   Updated: 2019/06/04 14:49:03 by sconstab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,8 @@ int		ft_putchar(char c);
 int		ft_intlen(long n);
 char	*ft_strrev(char *s);
 char	*ft_strctrim(char const *s, char c);
-size_t	ft_strclen(char *s, char c);
+size_t	ft_strcnlen(char const *s, char c, size_t x);
+size_t	ft_wordcount(char const *s, char c);
+char	*ft_strcreturn(char const *s, char c, size_t x);
 
 #endif
