@@ -6,7 +6,7 @@
 /*   By: sconstab <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 13:57:04 by sconstab          #+#    #+#             */
-/*   Updated: 2019/05/27 15:43:15 by sconstab         ###   ########.fr       */
+/*   Updated: 2019/06/04 16:46:03 by sconstab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,16 @@ char	*ft_strstr(const char *h, const char *n)
 	i = 0;
 	if (n[0] == '\0')
 		return ((char *)h);
-	while (h[i] == '\0')
+	while (h[i])
 	{
 		j = 0;
 		while (h[i + j] == n[j])
 		{
-			if (n[j])
+			if (n[j + 1] == '\0')
 				return ((char *)&h[i]);
 			j++;
 		}
 		i++;
 	}
-	return (0);
+	return (NULL);
 }
