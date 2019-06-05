@@ -6,7 +6,7 @@
 /*   By: sconstab <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/30 09:31:00 by sconstab          #+#    #+#             */
-/*   Updated: 2019/05/30 09:42:11 by sconstab         ###   ########.fr       */
+/*   Updated: 2019/06/05 09:35:43 by sconstab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,11 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	tlen;
 	char	*ns;
 
+	if (!s1 || !s2)
+		return (NULL);
 	tlen = ft_strlen(s1) + ft_strlen(s2) + 1;
-	ns = ft_strnew(tlen);
+	if (!(ns = ft_strnew(tlen)))
+		return (NULL);
 	ft_strcat(ns, s1);
 	ft_strcat(ns, s2);
 	return (ns);

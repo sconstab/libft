@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sconstab <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/30 10:27:58 by sconstab          #+#    #+#             */
-/*   Updated: 2019/06/01 10:01:34 by sconstab         ###   ########.fr       */
+/*   Created: 2019/06/05 08:26:22 by sconstab          #+#    #+#             */
+/*   Updated: 2019/06/05 08:45:00 by sconstab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,20 @@
 char	**ft_strsplit(char const *s, char c)
 {
 	char	**sa;
-	char	*ns;
-//	char	*tf;
-//	size_t	x;
-	size_t	y;
-//	size_t	z;
+	size_t	x;
 
-//	x = 0;
-	y = 0;
-//	z = 0;
-	sa = NULL;
-	ns = (char *)s;
-	ns = ft_strctrim(ns, c);
-	sa[y] = ft_strnew(ft_strclen(ns, c));
-	ft_strncpy(sa[y], ns, ft_strclen(ns, c));
+	x = 0;
+	sa = malloc(ft_wordcount(s, c) * sizeof(sa));
+	while (x < ft_wordcount(s, c))
+	{
+		sa[x] = ft_strnew(ft_strcnlen(s, c, x));
+		x++;
+	}
+	x = 0;
+	while (x < ft_wordcount(s, c))
+	{
+		sa[x] = ft_strcreturn(s, c, x);
+		x++;
+	}
 	return (sa);
 }
