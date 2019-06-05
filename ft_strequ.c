@@ -6,7 +6,7 @@
 /*   By: sconstab <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/30 08:11:03 by sconstab          #+#    #+#             */
-/*   Updated: 2019/05/30 08:30:16 by sconstab         ###   ########.fr       */
+/*   Updated: 2019/06/05 14:20:33 by sconstab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	ft_strequ(char const *s1, char const *s2)
 	size_t i;
 
 	i = 0;
+	if (!s1 || !s2)
+		return (0);
 	while (s1[i] || s2[i])
 	{
 		if (s1[i] == s2[i])

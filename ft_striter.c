@@ -6,7 +6,7 @@
 /*   By: sconstab <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 16:16:02 by sconstab          #+#    #+#             */
-/*   Updated: 2019/05/29 16:27:43 by sconstab         ###   ########.fr       */
+/*   Updated: 2019/06/05 15:06:17 by sconstab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_striter(char *s, void (*f)(char *))
 {
+	if (!s || !f)
+		return ((void)NULL);
 	while (*s)
 		f(s++);
 }

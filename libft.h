@@ -6,15 +6,16 @@
 /*   By: sconstab <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 14:13:39 by sconstab          #+#    #+#             */
-/*   Updated: 2019/06/04 14:49:03 by sconstab         ###   ########.fr       */
+/*   Updated: 2019/06/05 16:39:19 by sconstab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stdio.h>
 # include <stdlib.h>
+# include <stdio.h>
+# include <unistd.h>
 
 void	*ft_memset(void *b, int c, size_t len);
 void	ft_bzero(void *s, size_t n);
@@ -63,7 +64,14 @@ char	*ft_strtrim(char const *s);
 char	**ft_strsplit(char const *s, char c);
 char	*ft_itoa(int n);
 char	**ft_strsplit(char const *s, char c);
-int		ft_putchar(char c);
+void	ft_putchar(char c);
+void	ft_putstr(char const *s);
+void	ft_putendl(char const *s);
+void	ft_putnbr(int n);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char const *s, int fd);
+void	ft_putendl_fd(char const *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
 
 int		ft_intlen(long n);
 char	*ft_strrev(char *s);

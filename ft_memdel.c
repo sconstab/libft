@@ -6,7 +6,7 @@
 /*   By: sconstab <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 15:29:23 by sconstab          #+#    #+#             */
-/*   Updated: 2019/05/29 16:10:35 by sconstab         ###   ########.fr       */
+/*   Updated: 2019/06/05 15:01:25 by sconstab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_memdel(void **ap)
 {
+	if (!ap)
+		return ((void)NULL);
 	if (*ap != NULL)
 	{
 		free(*ap);

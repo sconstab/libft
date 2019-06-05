@@ -1,41 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sconstab <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/30 13:42:01 by sconstab          #+#    #+#             */
-/*   Updated: 2019/06/05 14:57:51 by sconstab         ###   ########.fr       */
+/*   Created: 2019/06/05 16:29:29 by sconstab          #+#    #+#             */
+/*   Updated: 2019/06/05 16:36:32 by sconstab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa(int n)
+void	ft_putnbr_fd(int n, int fd)
 {
-	char 	*s;
-	size_t	i;
-	size_t	j;
-	size_t	len;
+	char	c;
 
-	i = 0;
-	j = 1;
-	len = ft_intlen(n);
-	if (!(s = malloc(len + 2 * sizeof(char))))
-		return (NULL);
+	c = 0;
+	if (n == -2147483648)
+		ft_putstr_fd("-2147483648", fd);
 	if (n < 0)
 	{
-		j = -1;
-		s[--len] = '-';
+		ft_putchar_fd('-', fd);
+		n = n * -1;
 	}
-	if (n == 0)
-		return ("0");
-	while (i < len)
+	if (n > 9)
 	{
-		s[i++] = j * (n % 10) + '0';
-		n = n / 10;
+		ft_putnbr_fd(n / 10, fd);
+		n = n % 10;
 	}
-	s[i + 1] = '\0';
-	return (ft_strrev(s));
+	c = (n % 10) + '0';
+	ft_putchar_fd(c, fd);
 }

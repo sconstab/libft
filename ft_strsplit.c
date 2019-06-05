@@ -6,7 +6,7 @@
 /*   By: sconstab <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 08:26:22 by sconstab          #+#    #+#             */
-/*   Updated: 2019/06/05 08:45:00 by sconstab         ###   ########.fr       */
+/*   Updated: 2019/06/05 14:40:35 by sconstab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,10 @@ char	**ft_strsplit(char const *s, char c)
 	size_t	x;
 
 	x = 0;
-	sa = malloc(ft_wordcount(s, c) * sizeof(sa));
+	if (!s || !c)
+		return (NULL);
+	if (!(sa = malloc(ft_wordcount(s, c) * sizeof(sa))))
+		return (NULL);
 	while (x < ft_wordcount(s, c))
 	{
 		sa[x] = ft_strnew(ft_strcnlen(s, c, x));

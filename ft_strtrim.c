@@ -6,7 +6,7 @@
 /*   By: sconstab <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/30 09:44:06 by sconstab          #+#    #+#             */
-/*   Updated: 2019/06/05 10:40:44 by sconstab         ###   ########.fr       */
+/*   Updated: 2019/06/05 14:32:35 by sconstab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,16 @@ char	*ft_strtrim(char const *s)
 	size_t	e;
 	size_t	it;
 
+	i = 0;
 	if (!s)
 		return (NULL);
-	i = 0;
-	it = 0;
-	e = ft_strlen(s) - 1;
 	while (s[i] && (s[i] == ' ' || s[i] == '\n' || s[i] == '\t'))
 			i++;
-	if (i >= e)
-		return (ft_strnew(1));
-	while (s[e] == ' ' || s[e] == '\n' || s[e] == '\t')
+	e = ft_strlen(s);
+	while (i < e && (s[e - 1] == ' ' || s[e - 1] == '\n' || s[e - 1] == '\t'))
 			e--;
-	it = e - i + 1;
+	if (e == i)
+		return(ft_strnew(1));
+	it = e - i;
 	return (ft_strsub(s, i, it));
 }
