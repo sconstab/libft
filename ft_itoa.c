@@ -6,7 +6,7 @@
 /*   By: sconstab <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/30 13:42:01 by sconstab          #+#    #+#             */
-/*   Updated: 2019/06/05 14:57:51 by sconstab         ###   ########.fr       */
+/*   Updated: 2019/06/06 13:41:22 by sconstab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_itoa(int n)
 {
-	char 	*s;
+	char	*s;
 	size_t	i;
 	size_t	j;
 	size_t	len;

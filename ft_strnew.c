@@ -6,7 +6,7 @@
 /*   By: sconstab <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 15:34:11 by sconstab          #+#    #+#             */
-/*   Updated: 2019/06/05 08:09:08 by sconstab         ###   ########.fr       */
+/*   Updated: 2019/06/06 14:00:20 by sconstab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 char	*ft_strnew(size_t size)
 {
-	return(ft_memalloc(size + 1));
+	return (ft_memalloc(size + 1));
 }

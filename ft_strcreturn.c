@@ -6,7 +6,7 @@
 /*   By: sconstab <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/04 13:53:54 by sconstab          #+#    #+#             */
-/*   Updated: 2019/06/04 14:50:29 by sconstab         ###   ########.fr       */
+/*   Updated: 2019/06/06 13:59:52 by sconstab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ char	*ft_strcreturn(char const *s, char c, size_t x)
 	if (s[i] != c)
 		j++;
 	while (s[i] && j <= x)
-	{
 		if (s[i] == c && s[i])
 		{
 			while (s[i] == c && s[i])
@@ -37,7 +36,6 @@ char	*ft_strcreturn(char const *s, char c, size_t x)
 		else
 			while (s[i] != c && s[i])
 				i++;
-	}
 	while (s[i] != c && s[i])
 		ns[n++] = s[i++];
 	return (ns);

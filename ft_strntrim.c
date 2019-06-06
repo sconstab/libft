@@ -6,13 +6,13 @@
 /*   By: sconstab <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/31 13:55:30 by sconstab          #+#    #+#             */
-/*   Updated: 2019/05/31 15:09:45 by sconstab         ###   ########.fr       */
+/*   Updated: 2019/06/06 14:00:44 by sconstab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strntrim(char const *s, char c)
+char	*ft_strntrim(char const *s, char c)
 {
 	size_t	i;
 	size_t	j;

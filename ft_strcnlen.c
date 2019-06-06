@@ -6,7 +6,7 @@
 /*   By: sconstab <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/31 16:29:49 by sconstab          #+#    #+#             */
-/*   Updated: 2019/06/04 14:50:08 by sconstab         ###   ########.fr       */
+/*   Updated: 2019/06/06 13:42:03 by sconstab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ size_t	ft_strcnlen(char const *s, char c, size_t x)
 			j++;
 		}
 		else
-			while(s[i] != c && s[i])
+			while (s[i] != c && s[i])
 				i++;
 	}
 	while (s[i++] != c && s[i])
