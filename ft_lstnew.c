@@ -1,37 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sconstab <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/27 14:12:51 by sconstab          #+#    #+#             */
-/*   Updated: 2019/06/08 10:56:45 by sconstab         ###   ########.fr       */
+/*   Created: 2019/06/10 13:55:32 by sconstab          #+#    #+#             */
+/*   Updated: 2019/06/11 11:25:52 by sconstab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *h, const char *n, size_t len)
+t_list	*ft_lstnew(void const *content, size_t content_size)
 {
-	size_t	i;
-	size_t	j;
+	t_list	*list;
 
-	i = 0;
-	if (n[0] == '\0')
-		return ((char *)h);
-	while (h[i] && i < len)
-	{
-		j = 0;
-		while (h[i + j] == n[j])
-		{
-			if (i + j >= len)
-				break ;
-			if (n[j + 1] == '\0')
-				return ((char *)&h[i]);
-			j++;
-		}
-		i++;
-	}
-	return (NULL);
+	if (!(list = malloc(sizeof(t_list) * content_size)))
+		return (NULL);
+	if (content
+	list->content = &content;
+	list->content_size = content_size;
+	return (list);
 }
