@@ -22,6 +22,8 @@ char	*ft_itoa(int n)
 	i = 0;
 	j = 1;
 	len = ft_intlen(n);
+	if (n == 0)
+		return ("0");
 	if (!(s = malloc(len + 2 * sizeof(char))))
 		return (NULL);
 	if (n < 0)
@@ -29,8 +31,6 @@ char	*ft_itoa(int n)
 		j = -1;
 		s[--len] = '-';
 	}
-	if (n == 0)
-		return ("0");
 	while (i < len)
 	{
 		s[i++] = j * (n % 10) + '0';
